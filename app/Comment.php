@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    //
+    public function upVoteAndSave() {
+        $this -> likes += 1;
+        $this -> update();
+    }
+
 }
