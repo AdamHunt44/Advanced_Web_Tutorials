@@ -17,4 +17,5 @@
     @endforeach
     </tbody>
 </table>
+{{ $comments -> links () }}
 </body>
