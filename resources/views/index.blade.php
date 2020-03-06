@@ -28,7 +28,7 @@
             </td>
             <td>
                 <a class="button"
-                   href="/comment/{{ $c -> id }}/like/">
+                   href="/comment/{{ $c -> id }}/upvote/">
                     <ion-icon name="thumbs-up"></ion-icon>
                 </a>
             </td>
