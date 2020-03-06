@@ -11,4 +11,9 @@ class Comment extends Model
         $this -> update();
     }
 
+    public function downVoteAndSave() {
+        $this -> likes -= 1;
+        $this -> update();
+    }
+
 }

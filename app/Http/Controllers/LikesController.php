@@ -13,4 +13,10 @@ class LikesController extends Controller
 
         return redirect () -> action ('CommentController@index');
     }
+
+    public function downVote(Comment $comment) {
+        $comment -> downVoteAndSave();
+
+        return redirect () -> action ('CommentController@index');
+    }
 }

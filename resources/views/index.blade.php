@@ -11,6 +11,7 @@
     <th>Likes</th>
     <th>View</th>
     <th>Up Vote</th>
+    <th>Down Vote</th>
     </thead>
     <tbody>
     @foreach ($comments as $c)
@@ -29,6 +30,12 @@
                 <a class="button"
                    href="/comment/{{ $c -> id }}/like/">
                     <ion-icon name="thumbs-up"></ion-icon>
+                </a>
+            </td>
+            <td>
+                <a class="button"
+                   href="/comment/{{ $c -> id }}/downvote/">
+                    <ion-icon name="thumbs-down"></ion-icon>
                 </a>
             </td>
         </tr>
