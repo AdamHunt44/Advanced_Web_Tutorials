@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
 <body>
 <table class="table is-striped is-hoverable">
     <thead>
@@ -5,6 +9,7 @@
     <th>Comments</th>
     <th>Date</th>
     <th>Likes</th>
+    <th>View</th>
     <th>Up Vote</th>
     </thead>
     <tbody>
@@ -14,7 +19,12 @@
             <td>{{ $c -> comment }}</td>
             <td>{{ $c -> created_at -> format('D jS F') }}</td>
             <td>{{ $c -> likes }}</td>
-
+            <td>
+                <a class="button"
+                   href="/comment/{{ $c -> id }}/">
+                    <ion-icon name="eye"></ion-icon>
+                </a>
+            </td>
             <td>
                 <a class="button"
                    href="/comment/{{ $c -> id }}/like/">
@@ -27,5 +37,5 @@
 </table>
 {{ $comments -> links () }}
 </body>
-
+@endsection
 <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>

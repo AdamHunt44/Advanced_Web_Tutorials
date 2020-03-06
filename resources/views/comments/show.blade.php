@@ -1,28 +1,29 @@
+@extends('layouts.app')
+
+@section('page_heading')
+    Comment from {{ $comment -> name }}
+@endsection
+
 @section('content')
     <div class="box">
         <table class="table is-striped">
             <tbody>
             <tr>
-                <td>Name:</td>
-                <td>{{ $comment -> name}}</td>
+                <td>User Name: {{ $comment -> name }}</td>
             </tr>
             <tr>
-                <td>Date:</td>
-                <td>{{ $comment -> updated_at -> format('D jS F') }}</td>
+                <td>Comment: {{ $comment -> comment }}</td>
             </tr>
             <tr>
-                <td>Comment:</td>
-                <td>{{ $comment -> comment }}</td>
+                <td>Date: {{ $comment -> created_at -> format('D jS F') }}</td>
             </tr>
             <tr>
-                <td>Likes:</td>
-                <td>{{ $comment -> likes }}</td>
+                <td>Likes: {{ $comment -> likes }}</td>
             </tr>
             </tbody>
         </table>
+        <p>
+            <a class="button" href="/">Return</a>
+        </p>
     </div>
-
-    <p>
-        <a class="button" href="/">Back</a>
-    </p>
 @endsection

@@ -25,7 +25,7 @@ class CommentController extends Controller
 
     public function show(Comment $comment)
     {
-        //
+        return view ('comments.show', compact ('comment'));
     }
 
     public function edit(Comment $comment)
