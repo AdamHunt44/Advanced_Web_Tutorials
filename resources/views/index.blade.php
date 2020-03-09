@@ -11,6 +11,7 @@
     <th>Likes</th>
     <th>View</th>
     <th>Edit</th>
+    <th>Delete</th>
     <th>Up Vote</th>
     <th>Down Vote</th>
     </thead>
@@ -31,6 +32,12 @@
                 <a class="button"
                    href="/comment/{{ $c -> id }}/edit/">
                     <ion-icon name="create"></ion-icon>
+                </a>
+            </td>
+            <td>
+                <a class="button"
+                   href="/comment/{{ $c -> id }}/delete/">
+                    <ion-icon name="trash"></ion-icon>
                 </a>
             </td>
             <td>
