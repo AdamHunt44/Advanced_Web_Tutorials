@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\DocBlock\Tags\InvalidTag;
 
 class CommentController extends Controller
 {
@@ -30,12 +31,14 @@ class CommentController extends Controller
 
     public function edit(Comment $comment)
     {
-        //
+        return view ('comments.edit', compact ('comment'));
     }
 
     public function update(Request $request, Comment $comment)
     {
-        //
+        $comment -> update (['comment' => $request -> comment]);
+
+        return redirect () -> action ('CommentController@index');
     }
 
     public function destroy(Comment $comment)

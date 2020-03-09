@@ -19,6 +19,8 @@ Route::get ('/','CommentController@index');
 
 Route::get ('/comment/{comment}/', 'CommentController@show');
 
+Route::get('/comment/{comment}/edit/', 'CommentController@edit');
+Route::post('/comment/{comment}/edit/', 'CommentController@update');
 
 Route::get ('/comment/{comment}/upvote/', 'LikesController@upVote');
 Route::get ('/comment/{comment}/downvote/', 'LikesController@downVote');

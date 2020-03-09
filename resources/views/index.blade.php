@@ -10,6 +10,7 @@
     <th>Date</th>
     <th>Likes</th>
     <th>View</th>
+    <th>Edit</th>
     <th>Up Vote</th>
     <th>Down Vote</th>
     </thead>
@@ -24,6 +25,12 @@
                 <a class="button"
                    href="/comment/{{ $c -> id }}/">
                     <ion-icon name="eye"></ion-icon>
+                </a>
+            </td>
+            <td>
+                <a class="button"
+                   href="/comment/{{ $c -> id }}/edit/">
+                    <ion-icon name="create"></ion-icon>
                 </a>
             </td>
             <td>
