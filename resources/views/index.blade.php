@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 @extends('layouts.app')
-
 @section('content')
 <body>
+<a href="/add/">Create New Comment</a>
 <table class="table is-striped is-hoverable">
     <thead>
     <th>User</th>

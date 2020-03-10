@@ -16,12 +16,18 @@ class CommentController extends Controller
 
     public function create()
     {
-        //
+        return view ('comments.create');
     }
 
     public function store(Request $request)
     {
-        //
+        Comment::create([
+           'name' => $request -> input ('name'),
+           'comment' => $request -> input ('comment'),
+           'likes' => 0,
+        ]);
+
+        return redirect () -> action ('CommentController@index');
     }
 
     public function show(Comment $comment)

@@ -26,3 +26,6 @@ Route::get ('/comment/{comment}/delete/', 'CommentController@destroy');
 
 Route::get ('/comment/{comment}/upvote/', 'LikesController@upVote');
 Route::get ('/comment/{comment}/downvote/', 'LikesController@downVote');
+
+Route::get ('/add/', 'CommentController@create');
+Route::post ('/add/', 'CommentController@store');
