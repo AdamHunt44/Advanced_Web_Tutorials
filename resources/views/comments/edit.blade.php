@@ -24,3 +24,11 @@
         </fieldset>
     </form>
 @endsection
+
+@error('comment')
+    <div class="notification is-warning">
+        <p>
+            {{ $message }}
+        </p>
+    </div>
+@enderror

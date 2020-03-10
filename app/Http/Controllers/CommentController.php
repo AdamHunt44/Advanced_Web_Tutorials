@@ -8,6 +8,17 @@ use phpDocumentor\Reflection\DocBlock\Tags\InvalidTag;
 
 class CommentController extends Controller
 {
+
+    const RULES = [
+        'name' => 'required|min:3|max:64',
+        'comment' => 'required|min:3|max:256',
+    ];
+
+    const MESSAGES = [
+        'name.required' => 'The user\'s name is required.',
+        'comment.required' => 'The comment cannot be blank.',
+    ];
+
     public function index()
     {
         $comments = Comment::paginate (5);
@@ -21,6 +32,7 @@ class CommentController extends Controller
 
     public function store(Request $request)
     {
+        $request -> validate (self::RULES, self::MESSAGES);
         Comment::create([
            'name' => $request -> input ('name'),
            'comment' => $request -> input ('comment'),
@@ -42,6 +54,7 @@ class CommentController extends Controller
 
     public function update(Request $request, Comment $comment)
     {
+        $request -> validate (self::RULES, self::MESSAGES);
         $comment -> update (['comment' => $request -> comment]);
 
         return redirect () -> action ('CommentController@index');
